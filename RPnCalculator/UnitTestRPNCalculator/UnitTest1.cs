@@ -117,7 +117,7 @@ namespace UnitTestRPNCalculator
             string expr1 = "4 2 *";
             RPnCalculator.Calculator calci = new RPnCalculator.Calculator();
             string result = calci.Evaluate(expr1);
-            Assert.AreEqual("0", result);
+            Assert.AreEqual(" ", result);
         }
         
     }
