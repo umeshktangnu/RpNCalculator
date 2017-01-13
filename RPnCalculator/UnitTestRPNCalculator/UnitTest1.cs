@@ -112,13 +112,82 @@ namespace UnitTestRPNCalculator
 
         [TestMethod]
         
-        public void Evaluatemultiplicate()
+        public void EvaluateMultiplicate()
         {
             string expr1 = "4 2 *";
             RPnCalculator.Calculator calci = new RPnCalculator.Calculator();
             string result = calci.Evaluate(expr1);
-            Assert.AreEqual(" ", result);
+            Assert.AreEqual("8", result);
         }
-        
+        [TestMethod]
+        public void EvaluateFactorial()
+        {
+            string expr1 = "4 !";
+            RPnCalculator.Calculator calci = new RPnCalculator.Calculator();
+            string result = calci.Evaluate(expr1);
+            Assert.AreEqual("24", result);
+        }
+        [TestMethod]
+        public void SampleDataTest()
+        {
+            string expr1 = "1 2 3 + -";
+            RPnCalculator.Calculator calci = new RPnCalculator.Calculator();
+            string result = calci.Evaluate(expr1);
+            Assert.AreEqual("-4", result);
+        }
+        [TestMethod]
+        public void SampleDataTest2()
+        {
+            string expr1 = "5 1 2 + 4 * + 3 -";
+            RPnCalculator.Calculator calci = new RPnCalculator.Calculator();
+            string result = calci.Evaluate(expr1);
+            Assert.AreEqual("14", result);
+        }
+
+        [TestMethod]
+        public void SampleDataTest3()
+        {
+            string expr1 = "12 3 / !";
+            RPnCalculator.Calculator calci = new RPnCalculator.Calculator();
+            string result = calci.Evaluate(expr1);
+            Assert.AreEqual("24", result);
+        }
+
+        [TestMethod]
+        public void SampleDataTest4()
+        {
+            string expr1 = "3 ! 4 5 * +";
+            RPnCalculator.Calculator calci = new RPnCalculator.Calculator();
+            string result = calci.Evaluate(expr1);
+            Assert.AreEqual("26", result);
+        }
+
+        [TestMethod]
+        public void SampleDataTest5()
+        {
+            string expr1 = "50 % 2 *";
+            RPnCalculator.Calculator calci = new RPnCalculator.Calculator();
+            string result = calci.Evaluate(expr1);
+            Assert.AreEqual("1", result);
+        }
+
+        [TestMethod]
+        public void SampleDataTest6()
+        {
+            string expr1 = "2 3 ^ 4 5 + +";
+            RPnCalculator.Calculator calci = new RPnCalculator.Calculator();
+            string result = calci.Evaluate(expr1);
+            Assert.AreEqual("17", result);
+        }
+
+        public void SampleDataTest7()
+        {
+            string expr1 = "6 2 * 3 /";
+            RPnCalculator.Calculator calci = new RPnCalculator.Calculator();
+            string result = calci.Evaluate(expr1);
+            Assert.AreEqual("4", result);
+        }
+		
+		
     }
 }
